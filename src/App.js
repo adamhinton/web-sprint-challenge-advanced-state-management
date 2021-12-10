@@ -7,6 +7,8 @@ import Header from './components/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
+import { connect } from "react-redux";
+
 const App = ()=> {
   return (
     <div className="App">
