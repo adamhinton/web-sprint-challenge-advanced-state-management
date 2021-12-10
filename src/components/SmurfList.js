@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 
 
  const SmurfList = (props)=> {
-    console.log('PROPS:', props)
+    console.log('SmurfList PROPS:', props)
+    const {smurfArray, isLoading} = props;
 
-    const isLoading = false;
+    console.log('SMURFARRAY:', smurfArray, 'isLOADING:', isLoading)
+
+    // const isLoading = false;
     const testSmurf = {
         id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
         name:'Poppa Smurf',
@@ -20,7 +23,16 @@ import { connect } from 'react-redux';
     }
 
     return(<div className="listContainer">
-        <Smurf smurf={testSmurf}/>
+
+        {
+
+        smurfArray.map(smurf =>
+            // <Smurf smurf = {smurf} key= {smurf.id} />
+            console.log('SmurfMap Smurf:', smurf)
+        )
+        
+        }
+
     </div>);
 }
 
