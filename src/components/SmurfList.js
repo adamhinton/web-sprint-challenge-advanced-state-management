@@ -26,7 +26,7 @@ import { connect } from 'react-redux';
 
         {
 
-        smurfArray.map(smurf =>
+        props.smurfArray.map(smurf =>
             // <Smurf smurf = {smurf} key= {smurf.id} />
             console.log('SmurfMap Smurf:', smurf)
         )
