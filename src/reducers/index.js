@@ -22,11 +22,11 @@ const reducer = (state = initialState, action)=>{
             }
         }
 
-        case('FETCH_ERROR'):{
-        //     return{
-        //         ...state,
-        //         error: action.payload
-        //     }
+        case('SET_ERROR'):{
+            return{
+                ...state,
+                error: action.payload
+            }
         }
 
         case('ADD_SMURF'):{

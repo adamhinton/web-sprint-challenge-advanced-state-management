@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { addSmurf, setError } from '../actions';
 
 const AddForm = (props) => {
+    const {errorMessage} = props.error;
+
+    console.log('ADDFORM PROPS:', props)
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -8,8 +13,6 @@ const AddForm = (props) => {
         description:""
     });
 
-    //remove when error state is added
-    const errorMessage = "";
 
     const handleChange = e => {
         setState({
@@ -21,11 +24,15 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            //dispatch a custom error action
+            setError() // not sure about this
+            console.log(errorMessage)
         } else {
-            //dispatch an addSmurf action
+            addSmurf(); // not sure about this
         }
     }
+
+
+    //3. Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
 
     return(<section>
         <h2>Add Smurf</h2>
@@ -49,12 +56,18 @@ const AddForm = (props) => {
             {
                 errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {errorMessage}</div>
             }
-            <button>Submit Smurf</button>
+            <button onClick={handleSubmit}>Submit Smurf</button>
         </form>
     </section>);
 }
 
-export default AddForm;
+const mapStateToProps = state =>{
+    return ({
+        ...state,
+    })
+}
+
+export default connect(mapStateToProps, {addSmurf, setError})(AddForm);
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.

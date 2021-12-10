@@ -1,7 +1,7 @@
 import axios from 'axios';
 // import { Dispatch } from 'react';
 export const ADD_SMURF= 'ADD_SMURF';
-export const FETCH_ERROR = 'FETCH_ERROR';
+export const SET_ERROR = 'SET_ERROR';
 export const LOADING = 'LOADING'
 export const FETCH_SMURFS = 'FETCH_SMURFS'
 
@@ -29,6 +29,7 @@ export const addSmurf = smurf =>{
 };
 //not totally sure this will work as intended
 
-export const fetchError = () =>{
-    return({type: FETCH_ERROR, payload: 'Smurf Fetching Error'})
+export const setError = () =>{
+    console.log('fjdasiofs')
+    return({type: SET_ERROR, payload: 'You dummy, you didnt enter any info!'})
 }
