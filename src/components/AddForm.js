@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { addSmurf, setError } from '../actions';
 
 const AddForm = (props) => {
-    const {errorMessage} = props.error;
+    const [error, setError] = useState('');
+    console.log('ERROR MESSAGE:', errorMessage);
 
     console.log('ADDFORM PROPS:', props)
     const [state, setState] = useState({
@@ -24,8 +25,8 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            setError('ERROR 123 ERROR 123') // not sure about this
-            console.log(errorMessage)
+            setError() // not sure about this
+            console.log("AFTER SUBMIT ERROR MESSAGE:", errorMessage)
         } else {
             props.addSmurf(state); // not sure about this
         }
