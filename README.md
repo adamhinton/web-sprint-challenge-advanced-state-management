@@ -58,7 +58,7 @@ In this project, you will build the reducer, actions and basic redux connects to
   * [X] Add in a reducer case to accommodate the start of a smurf fetch.
   * [X] Add in a reducer case to accommodate the successful smurf api fetch.
   * [X] Add in a reducer cases to accommodate an error.
-  * [ ] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
+  * [X] Add in a reducer case to accommodate adding a smurf (including the name, nickname, position, description and an internally generated id) into your smurf list.
   * [ ] Add in a reducer case that adds in a value to the error message.
 
 ### Complete index.js [X]
@@ -68,7 +68,7 @@ In this project, you will build the reducer, actions and basic redux connects to
 ### Complete actions/index.js
   Add in the action creators and action constants needed to add a smurf to state and fetch smurfs from the server. **If at all possible, add in action cases one at a time, instead of all at once. Test your state connects and reducer cases as necessary.**
 
-  * [ ] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retrieve all smurfs from the api. Save the result of to our state and show an error if one is made.
+  * [X] Add a thunk action called fetchSmurfs that triggers a loading status display in our application, performs an axios call to retrieve all smurfs from the api. Save the result of to our state and show an error if one is made.
   * [x] Add a standard action that allows us to add new smurf (including the name, nickname, position, summary).
   * [x] Add a standard action that allows us to set the value of the error message slice of state.
   
@@ -81,17 +81,17 @@ In this project, you will build the reducer, actions and basic redux connects to
 ### Complete components/SmurfList.js
   Connect this component to your smurfs and loading screen state slices.
   
-  * [ ] Connect the smurfs and loading state values to the SmurfList component.
-  * [ ] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
-  * [ ] Replace the static isLoading variable with the state loading variable.
+  * [X] Connect the smurfs and loading state values to the SmurfList component.
+  * [X] Replace the single Smurf component instance with a map return a Smurf component for each entry in the smurfs list.
+  * [X] Replace the static isLoading variable with the state loading variable.
 
 ### Complete components/AddForm.js
   Connect this component to the error state slice, setError and addSmurf actions. Complete the form handling code.
 
-  * [ ] Connect your error state slice, setError and addSmurf actions to the AddForm component.
+  * [X] Connect your error state slice, setError and addSmurf actions to the AddForm component.
   * [ ] Replace all instances of the errorMessage static variable with your error message state slice. 
   * [ ] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
-  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summery passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+  * [X] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summery passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
 ## Important Notes:
 
@@ -113,9 +113,13 @@ In this project, you will build the reducer, actions and basic redux connects to
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers below.
 
 1. What problem does the context API help solve?
+  If I'm just using normal state programming I might have to pass state in as props through four or five or more generations. Context API helps get around that.
 
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+-Actions are little packets of info that tell my reducer what to di with the data. Reducers return an object telling the state how to manage the data from the action. The store is a single JS object that holds all of our state data.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
+  A thunk is a function returned by another function. It allows actions to function asynchronously by not all happening at the same time, only when the function is called.
 
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+Context API because it's easier and more intuitive. I really struggled with the others.
