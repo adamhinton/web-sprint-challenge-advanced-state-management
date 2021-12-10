@@ -24,10 +24,10 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            setError() // not sure about this
+            setError('ERROR 123 ERROR 123') // not sure about this
             console.log(errorMessage)
         } else {
-            addSmurf(); // not sure about this
+            props.addSmurf(state); // not sure about this
         }
     }
 

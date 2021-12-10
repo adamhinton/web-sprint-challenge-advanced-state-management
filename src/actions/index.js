@@ -25,11 +25,16 @@ export const fetchSmurfs= () => (dispatch) =>{
 }
 
 export const addSmurf = smurf =>{
-    return({type: ADD_SMURF, payload: smurf})
+    return({type: ADD_SMURF, payload: {
+        id: Date.now(),
+        name: smurf.name,
+        position: smurf.position,
+        nickname: smurf.nickname,
+        description: smurf.description,
+    }})
 };
 //not totally sure this will work as intended
 
-export const setError = () =>{
-    console.log('fjdasiofs')
-    return({type: SET_ERROR, payload: 'You dummy, you didnt enter any info!'})
+export const setError = (error) =>{
+    return({type: SET_ERROR, payload: error})
 }
