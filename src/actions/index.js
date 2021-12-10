@@ -3,6 +3,7 @@ import { Dispatch } from 'react';
 export const ADD_SMURF= 'ADD_SMURF';
 export const FETCH_ERROR = 'FETCH_ERROR';
 export const LOADING = 'LOADING'
+export const FETCH_SMURFS = 'FETCH_SMURFS'
 
 
 //Task List:
@@ -10,17 +11,16 @@ export const LOADING = 'LOADING'
 //2. Add a standard action that allows us to add new smurf (including the name, nickname, position, summary)
 //3. Add a standard action that allows us to set the value of the error message slice of state.
 
-export const fetchSmurfs= () => () =>{
+export const fetchSmurfs= () => (dispatch) =>{
 //need to put dispatch here
 
     axios.get('http://localhost:3333/smurfs')
         .then(res =>{
-            dispatch({type: SUCESSFUL_FETCH, payload: res.data})
+            dispatch({type: FETCH_SMURFS, payload: res.data})
         })
         .catch(err =>{
             console.error(err)
         })
-    console.log('jaifodsa')
 }
 
 export const addSmurf = smurf =>{

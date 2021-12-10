@@ -12,7 +12,6 @@ import { initialState } from "./reducers";
 
 
 const App = (props)=> {
-  const [smurfs, setSmurfs] = useState(initialState)
 
   useEffect( () =>{
     props.fetchSmurfs();
