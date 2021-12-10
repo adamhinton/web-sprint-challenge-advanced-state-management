@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import { connect } from "react-redux";
 import { fetchSmurfs } from "./actions";
-import { useState, useEffect } from "react";
-import { initialState } from "./reducers";
+import { useEffect } from "react";
+// import { initialState } from "./reducers";
 
 
 const App = (props)=> {

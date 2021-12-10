@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Dispatch } from 'react';
+// import { Dispatch } from 'react';
 export const ADD_SMURF= 'ADD_SMURF';
 export const FETCH_ERROR = 'FETCH_ERROR';
 export const LOADING = 'LOADING'
@@ -16,7 +16,7 @@ export const fetchSmurfs= () => (dispatch) =>{
 
     axios.get('http://localhost:3333/smurfs')
         .then(res =>{
-            console.log('RES.DATA:', res.data)
+            // console.log('RES.DATA:', res.data)
             dispatch({type: FETCH_SMURFS, payload: res.data})
         })
         .catch(err =>{
