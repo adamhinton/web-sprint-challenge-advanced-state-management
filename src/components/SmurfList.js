@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
  const SmurfList = (props)=> {
     console.log('SmurfList PROPS:', props)
     const {smurfArray, isLoading} = props;
+    
 
     console.log('SMURFARRAY:', smurfArray, 'isLOADING:', isLoading)
 
@@ -23,16 +24,9 @@ import { connect } from 'react-redux';
     }
 
     return(<div className="listContainer">
-
-        {
-
-        props.smurfArray.map(smurf =>
-            // <Smurf smurf = {smurf} key= {smurf.id} />
-            console.log('SmurfMap Smurf:', smurf)
-        )
-        
-        }
-
+            {
+                smurfArray.map(smurf =><Smurf smurf={smurf} key = {smurf.id}/>)
+            }
     </div>);
 }
 
