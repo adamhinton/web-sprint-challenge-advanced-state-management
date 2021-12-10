@@ -18,7 +18,7 @@ const reducer = (state = initialState, action)=>{
         case('FETCH_SMURFS'):{
             return{
                 ...state,
-                smurfArray:[...state.smurfArray, action.payload]
+                smurfArray:[...state.smurfArray, action.payload],
             }
         }
 
