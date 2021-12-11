@@ -6,6 +6,7 @@ export const initialState = {
 }
 
 
+//I couldn't work out how to properly add some of these reducers.
 const reducer = (state = initialState, action)=>{
     switch(action.type){
         case('LOADING'):{
@@ -22,6 +23,7 @@ const reducer = (state = initialState, action)=>{
             }
         }
 
+        //This set error bit really gave me trouble. I ended up giving up on this and doing it another way. My way is functional but it's not how the assignment wanted it.
         case('SET_ERROR'):{
             return{
                 ...state,

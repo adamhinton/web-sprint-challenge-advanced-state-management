@@ -12,7 +12,7 @@ export const FETCH_SMURFS = 'FETCH_SMURFS'
 //3. Add a standard action that allows us to set the value of the error message slice of state.
 
 export const fetchSmurfs= () => (dispatch) =>{
-//need to put dispatch here
+//Not sure if I should be defining dispatch here somehow. I don't really understand how I can just call dispatch like it's a function when I never defined it.
 
     axios.get('http://localhost:3333/smurfs')
         .then(res =>{
@@ -24,6 +24,7 @@ export const fetchSmurfs= () => (dispatch) =>{
         })
 }
 
+//this one took forever to get right.
 export const addSmurf = smurf =>{
     return({type: ADD_SMURF, payload: {
         id: Date.now(),
@@ -33,8 +34,8 @@ export const addSmurf = smurf =>{
         description: smurf.description,
     }})
 };
-//not totally sure this will work as intended
 
+//Never got this one right, ended up abandoning it due to running low on time, I used another method to get the errormessage to display.
 export const setError = (error) =>{
     return({type: SET_ERROR, payload: error})
 }

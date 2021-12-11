@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { addSmurf, setError } from '../actions';
 
 const AddForm = (props) => {
-//     let errorMessage = props.error;
-    // console.log('ERROR MESSAGE:', errorMessage);
 
+
+    //I know this isn't how I'm supposed to do the errormessage stuff but I couldn't figure out the right way and I'm running out of time.
     const [errorMessage, setErrorMessage] = useState('')
 
     console.log('ADDFORM PROPS:', props)
@@ -30,12 +30,10 @@ const AddForm = (props) => {
             setErrorMessage('error123 error456')
             console.log("AFTER SUBMIT ERROR MESSAGE:", errorMessage)
         } else {
-            props.addSmurf(state); // not sure about this
+            props.addSmurf(state); // not sure this is the right way.
         }
     }
 
-
-    //3. Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when this validation code fails.
 
     return(<section>
         <h2>Add Smurf</h2>
