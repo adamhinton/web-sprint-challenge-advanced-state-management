@@ -27,7 +27,7 @@ const AddForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault();
         if (state.name === "" || state.position === "" || state.nickname === "") {
-            setErrorMessage('error123 error456')
+            setErrorMessage('You need to fill out the fields')
             console.log("AFTER SUBMIT ERROR MESSAGE:", errorMessage)
         } else {
             props.addSmurf(state); // not sure this is the right way.
